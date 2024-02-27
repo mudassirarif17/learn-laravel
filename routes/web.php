@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Simple Route
 // Route::get('/demo' , function(){
@@ -23,14 +23,14 @@ Route::get('/', function () {
 // });
 
 // Dynamic Routes
-Route::any('/test/{name}' , function($name){
-    echo "Hello ".$name;
-});
+// Route::any('/test/{name}' , function($name){
+//     echo "Hello ".$name;
+// });
 
-Route::get('/demo/{name}/{id?}' , function($name , $id = null){
-    $data = compact('name' , 'id');
-    return view('demo')->with($data);
-});
+// Route::get('/demo/{name}/{id?}' , function($name , $id = null){
+//     $data = compact('name' , 'id');
+//     return view('demo')->with($data);
+// });
 
 
 // Route::post('/users' , function(){
@@ -48,3 +48,23 @@ Route::get('/demo/{name}/{id?}' , function($name , $id = null){
 // Route::delete('/users' , function(){
 //     echo "Hello From Users";
 // });
+
+
+// Route::get('/{name?}' , function($name = null){
+//     $demo = "<h2>DEMO Heading</h2>";
+//     $data = compact('name' , 'demo');
+//     return view('home')->with($data);
+// });
+
+Route::get('/' , function(){
+    return view('home1');
+});
+
+
+Route::get('/about' , function(){
+    return view('about');
+});
+
+Route::get('/course' , function(){
+    return view('course');
+});
