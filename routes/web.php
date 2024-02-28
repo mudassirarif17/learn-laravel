@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\demoController;
+use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,15 +59,26 @@ use Illuminate\Support\Facades\Route;
 //     return view('home')->with($data);
 // });
 
-Route::get('/' , function(){
-    return view('home1');
-});
+// Route::get('/' , function(){
+//     return view('home1');
+// });
 
 
-Route::get('/about' , function(){
-    return view('about');
-});
+// Route::get('/about' , function(){
+//     return view('about');
+// });
 
-Route::get('/course' , function(){
-    return view('course');
-});
+// Route::get('/course' , function(){
+//     return view('course');
+// });
+
+
+
+// Working on Controller
+Route::get('/' , [demoController::class , 'index']);
+
+Route::get('/about' , 'App\Http\Controllers\demoController@about');
+
+Route::get('/course' , SingleActionController::class, '__invoke');
+
+Route::resource('photo' , PhotoController::class);
