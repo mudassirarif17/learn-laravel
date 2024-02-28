@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\demoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,6 @@ Route::get('/about' , 'App\Http\Controllers\demoController@about');
 Route::get('/course' , SingleActionController::class, '__invoke');
 
 Route::resource('photo' , PhotoController::class);
+
+Route::get('/register' , [RegistrationController::class , 'index']);
+Route::post('/register' , [RegistrationController::class , 'register']);
