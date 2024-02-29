@@ -71,43 +71,13 @@
 
             <form action="{{url('/')}}/register" method="post">
                 @csrf
-                <!-- <pre>
                 @php
-                    print_r($errors->all());
+                    $demo = 1;
                 @endphp
-                </pre> -->
-            <div>
-                <input name="name" type="text" placeholder="Name" class="form-control" value="{{old('name')}}">
-                <span class="text-danger">
-                    @error('name')
-                    {{$message}}
-                    @enderror</span>
-            </div>
-            <div>
-                <input name="email" type="text" placeholder="Email" class="form-control">
-                <span class="text-danger">
-                    @error('email')
-                    {{$message}}
-                    @enderror
-                </span>
-            </div>
-            <div>
-                <input name="password" type="text" placeholder="Password" class="form-control">
-                <span class="text-danger">
-                @error('password')
-                {{$message}}
-                @enderror
-                </span>
-            </div>
-            <div>
-                <input name="password_confirmation" type="text" placeholder="Confirm Password" class="form-control">
-                <span class="text-danger">
-                @error('password_confirmation')
-                {{$message}}
-                @enderror
-                </span>
-            </div>
-            <div>
+                <x-input type="text" name="name" placeholder="Enter Your Name" :demo="$demo"/>
+                <x-input type="email" name="email" placeholder="Enter Your Email"/>
+                <x-input type="password" name="password" placeholder="Enter Your Password"/>
+                <x-input type="password" name="password_confirmation" placeholder="Enter Confirm Password"/>
                 <button class="btn btn-primary">Submit</button>
             </div>
             </form>
