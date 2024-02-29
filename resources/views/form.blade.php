@@ -19,29 +19,99 @@
     </head>
 
     <body>
+       <!-- <div class="container">
+            <h1 class="text-center">Registration</h1>
+
+            <form action="{{url('/')}}/register" method="post">
+                @csrf
+                <pre>
+                @php
+                    print_r($errors->all());
+                @endphp
+                </pre>
+            <div>
+                <input name="name" type="text" placeholder="Name" class="form-control" value="{{old('name')}}">
+                <span class="text-danger">
+                    @error('name')
+                    {{$message}}
+                    @enderror</span>
+            </div>
+            <div>
+                <input name="email" type="text" placeholder="Email" class="form-control">
+                <span class="text-danger">
+                    @error('email')
+                    {{$message}}
+                    @enderror
+                </span>
+            </div>
+            <div>
+                <input name="password" type="text" placeholder="Password" class="form-control">
+                <span class="text-danger">
+                @error('password')
+                {{$message}}
+                @enderror
+                </span>
+            </div>
+            <div>
+                <input name="password_confirmation" type="text" placeholder="Confirm Password" class="form-control">
+                <span class="text-danger">
+                @error('password_confirmation')
+                {{$message}}
+                @enderror
+                </span>
+            </div>
+            <div>
+                <button class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+       </div> -->
+
        <div class="container">
             <h1 class="text-center">Registration</h1>
 
             <form action="{{url('/')}}/register" method="post">
                 @csrf
+                <!-- <pre>
+                @php
+                    print_r($errors->all());
+                @endphp
+                </pre> -->
             <div>
-                <input name="name" type="text" placeholder="Name" class="form-control">
-                <small class="text-muted">Help Text</small>
+                <input name="name" type="text" placeholder="Name" class="form-control" value="{{old('name')}}">
+                <span class="text-danger">
+                    @error('name')
+                    {{$message}}
+                    @enderror</span>
             </div>
             <div>
                 <input name="email" type="text" placeholder="Email" class="form-control">
-                <small class="text-muted">Help Text</small>
+                <span class="text-danger">
+                    @error('email')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div>
                 <input name="password" type="text" placeholder="Password" class="form-control">
-                <small class="text-muted">Help Text</small>
+                <span class="text-danger">
+                @error('password')
+                {{$message}}
+                @enderror
+                </span>
+            </div>
+            <div>
+                <input name="password_confirmation" type="text" placeholder="Confirm Password" class="form-control">
+                <span class="text-danger">
+                @error('password_confirmation')
+                {{$message}}
+                @enderror
+                </span>
             </div>
             <div>
                 <button class="btn btn-primary">Submit</button>
             </div>
             </form>
        </div>
-
 
 
 
